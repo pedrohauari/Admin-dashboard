@@ -1,28 +1,31 @@
 * { 
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 :root { 
-  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --accent: #fa3a6d;
+  --gray-1: #292524;
+  --primary: #084c61;
 }
 
 body { 
     background-color: snow;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "PT Serif", serif system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
   .container { 
     display: grid;
     grid-template-columns: 1fr 5fr;
-    grid-template-rows: 1fr 2fr;
-    column-gap: 30px;
+    grid-template-rows: 1fr 3fr;
+    column-gap: 35px;
    
   }
   .header { 
     background-color: snow;
     display: grid;
-    grid-template-columns: 1fr 4fr 1fr 1fr 1fr;
-    align-content: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     justify-content: center;
+    align-content: center;
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
@@ -33,13 +36,13 @@ body {
     
   }
   .sidebar { 
-    background-color: #1fbcdb; 
+    background-color: var(--primary); 
     display: grid;
     grid-column-start: 1;
     grid-row-start: 1;
     grid-row-end: 3;
     width: calc(50vw - 30vw);
-    height: calc(100vh - 1vh);
+    height: 100vh;
     padding-left: 40px;
     padding-top: 40px;
     
@@ -49,31 +52,33 @@ body {
     font-size: 1.5rem;
     
   }
-  .dashboard { 
+  #dashboard { 
     font-weight: bolder;
+    font-size: 40px;
   }
   .home { 
-    font-weight: bold;
+    font-weight: bolder;
   }
   .main { 
-    background-color: rgba(10, 64, 180, 0.76);
+    background-color: var(--gray-1);
     border: 3px solid black;
     display: grid;
-    grid-template-columns: 4fr 1fr 1fr;
+    grid-template-columns: 4fr 1fr 1fr 1fr;
     grid-column-start: 2;
+    column-gap: 90px;
     
     
   }
   .main .projects { 
-    display: grid;
-    grid-template-columns: repeat(auto-fit, clamp(150px, 1fr, 300px));
-    grid-template-rows: repeat(auto-fit, clamp(150px, 1fr, 300px));
-    gap: 15px;
-    grid-auto-rows: clamp(150px, 1fr, 300px); 
-    grid-auto-columns: clamp(150px, 1fr, 300px);
-    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: center;
+    flex: 1;
+    box-shadow: var(--accent);
+    padding: 2rem;
+
   }
-  
   .form { 
     color:white;
     font-weight: bold;
@@ -102,22 +107,27 @@ body {
   background-color: #08829c;
    color: white;
   border-radius: 20px;
-  width: 4rem;
-  height: 2rem;
+  width: 150px;
+  height: 50px;
   margin-right: 50px;
+  font-size: 2rem;
+  overflow: auto;
   }
   .username { 
     font-weight: bolder;
   }
   .projects { 
     color: white;
-    font-weight: 900;
+    font-weight: bolder;
+    font-size: 1.2rem;
   }
   .projects > div { 
     border: 2px solid;
+    padding: 1.5rem;
   }
   .projects p  { 
     color:white;
+    overflow: auto;
   }
   #input { 
     border-radius: 10px;
@@ -125,24 +135,35 @@ body {
     width: 40rem;
     height: 2.5rem;
     border-radius: 20px;
+    margin-bottom: 50px;
   }
   #input:focus { 
     border: 2px solid black;
   }
   .announcements { 
-    color: white;
+    background-color:#084c61;
+    color: snow;
     font-weight: light;
-    text-align: end;
     border: 3px solid black;
+    height: min-content;
+    padding: 2rem;
+  }
+  .announcements p { 
+    font-size: 20px;
+    overflow: auto;
   }
   .trending { 
+    background-color: #08829c;
     color: white;
-    font-weight: 200;
-    text-align: end;
+    font-weight: 400;
     border: 3px solid black;
+    height: min-content;
+    width: min-content;
+    padding: 2rem;
   }
   .maintenance , .privacypolicy { 
     border: 2px solid;
+    text-align: center;
   }
   .footer { 
     background-color: gray;
@@ -152,19 +173,25 @@ body {
     text-align: center;
   }
   svg { 
-    height: 20px;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
     background-color: snow;
     margin-right: 15px;
+    
   }
  .greeting { 
   padding-right: 500px;
   padding-left: 30px;
  }
- .search { 
-  
-
- }
+ 
  .end { 
   display: flex;
   align-items: end;
+ }
+ .communities { 
+    margin-bottom: 20px;
+ }
+ .user1, .user2, .user3 { 
+  border: 5px solid rgba(255, 255, 255, 0.274);
  }
